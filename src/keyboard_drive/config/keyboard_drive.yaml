@@ -1,0 +1,17 @@
+keyboard_drive:
+  ros__parameters:
+    motor_topic: /xycar_motor
+
+    # Arrow-key increments and output limits.
+    speed_step: 1.0
+    steering_step: 5.0
+    max_forward_speed: 6.0
+    max_reverse_speed: 3.0
+    max_steering: 50.0
+
+    # Default: negative steering is left. Change to 1.0 if reversed.
+    left_steering_sign: -1.0
+
+    # Stop and center when no accepted key is received for this duration.
+    deadman_timeout_sec: 0.5
+    publish_rate_hz: 20.0
