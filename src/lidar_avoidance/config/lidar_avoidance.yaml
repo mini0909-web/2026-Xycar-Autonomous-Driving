@@ -1,0 +1,61 @@
+lidar_avoidance:
+  ros__parameters:
+    scan_topic: /scan
+    lane_command_topic: /lane/drive_cmd
+    motor_topic: /xycar_motor
+    yellow_side_topic: /lane/yellow_side
+    enabled: true
+
+    # Input watchdogs. A missing camera command or LiDAR scan stops the car.
+    control_period_sec: 0.05
+    scan_timeout_sec: 0.35
+    lane_command_timeout_sec: 0.35
+    yellow_side_timeout_sec: 1.0
+
+    # Standard LaserScan has +Y on the left. Change to -1.0 only if RViz shows
+    # that the actual LiDAR left/right direction is reversed.
+    scan_y_sign: 1.0
+    minimum_valid_range_m: 0.12
+    maximum_valid_range_m: 3.0
+
+    # Current-lane obstacle rectangle in the vehicle coordinate frame.
+    front_x_min_m: 0.20
+    front_x_max_m: 1.50
+    front_half_width_m: 0.22
+    front_min_points: 3
+    obstacle_confirm_scans: 3
+    front_clear_scans: 4
+    emergency_distance_m: 0.30
+    minimum_change_start_distance_m: 0.45
+
+    # Adjacent-lane clearance rectangle.
+    target_lane_offset_m: 0.45
+    target_half_width_m: 0.20
+    target_x_min_m: -0.25
+    target_x_max_m: 1.40
+    target_blocked_min_points: 3
+
+    # Original-lane zone used to decide when the obstacle has been passed.
+    original_lane_x_min_m: -0.40
+    original_lane_x_max_m: 1.60
+    original_lane_half_width_m: 0.25
+    side_obstacle_min_points: 3
+
+    # First-test values are deliberately below the current lane speed of 15.
+    # Measure and tune these on a rosbag before increasing avoidance_speed_cap.
+    lane_change_duration_sec: 1.20
+    lane_change_confirmation_timeout_sec: 2.0
+    lane_side_confirm_messages: 3
+    lane_change_steering_bias: 22.0
+    right_steering_sign: 1.0
+    maximum_steering: 50.0
+    avoidance_speed_cap: 8.0
+    passing_min_sec: 0.80
+    passing_timeout_sec: 4.0
+    passing_clear_scans: 4
+    cooldown_sec: 1.5
+
+    # When the yellow divider cannot be located, stopping is safer than guessing
+    # which side is outside the track.
+    allow_unknown_lane_side: false
+    unknown_lane_fallback_side: left
