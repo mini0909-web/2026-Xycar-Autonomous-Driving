@@ -1,0 +1,750 @@
+{
+  "bag": "/home/user/dev/ros2/xycar_src/bag_extract/20260806_130814",
+  "topic": "/usb_cam/image_raw/front",
+  "ground_truth": {
+    "method": "manual relative-time annotations; all unlisted frames are no-signal",
+    "segments": [
+      {
+        "start": 80.0,
+        "end": 82.0,
+        "state": "RED"
+      },
+      {
+        "start": 82.1,
+        "end": 82.8,
+        "state": "YELLOW"
+      },
+      {
+        "start": 138.0,
+        "end": 143.5,
+        "state": "LEFT"
+      },
+      {
+        "start": 172.0,
+        "end": 174.0,
+        "state": "LEFT"
+      },
+      {
+        "start": 210.0,
+        "end": 212.0,
+        "state": "LEFT"
+      },
+      {
+        "start": 263.0,
+        "end": 264.7,
+        "state": "GREEN"
+      }
+    ]
+  },
+  "total_frames": 8949,
+  "actual_signal_frames": 415,
+  "actual_no_signal_frames": 8534,
+  "true_positive": 91,
+  "false_negative": 324,
+  "false_positive": 88,
+  "true_negative": 8446,
+  "precision": 0.50838,
+  "recall": 0.219277,
+  "false_positive_frame_rate": 0.010312,
+  "correct_state_frames": 65,
+  "wrong_state_frames": 26,
+  "camera_fps": 30.167,
+  "average_processing_ms": 1.1305,
+  "p99_processing_ms": 2.4009,
+  "core_fps_from_average": 884.602,
+  "stage_average_ms": {
+    "roi": 0.0225,
+    "hsv_mask": 0.3505,
+    "candidates": 0.7516,
+    "total": 1.1305
+  },
+  "filtered_state_counts": {
+    "UNKNOWN": 8770,
+    "YELLOW": 67,
+    "RED": 20,
+    "GREEN": 45,
+    "LEFT": 47
+  },
+  "raw_state_counts": {
+    "UNKNOWN": 8801,
+    "RED": 35,
+    "YELLOW": 58,
+    "GREEN": 31,
+    "LEFT": 24
+  },
+  "state_confusion": {
+    "UNKNOWN": {
+      "UNKNOWN": 8446,
+      "YELLOW": 67,
+      "RED": 14,
+      "LEFT": 4,
+      "GREEN": 3
+    },
+    "RED": {
+      "UNKNOWN": 55,
+      "RED": 6
+    },
+    "YELLOW": {
+      "UNKNOWN": 21
+    },
+    "LEFT": {
+      "UNKNOWN": 217,
+      "GREEN": 24,
+      "LEFT": 41
+    },
+    "GREEN": {
+      "GREEN": 18,
+      "UNKNOWN": 31,
+      "LEFT": 2
+    }
+  },
+  "selected_candidate_distributions": {
+    "no_signal:RED": {
+      "area": {
+        "min": 34.0,
+        "p25": 164.5,
+        "median": 177.5,
+        "p75": 206.0,
+        "max": 362.5
+      },
+      "center_x_ratio": {
+        "min": 0.08,
+        "p25": 0.132,
+        "median": 0.142,
+        "p75": 0.151,
+        "max": 0.822
+      },
+      "center_y_ratio": {
+        "min": 0.037,
+        "p25": 0.041,
+        "median": 0.044,
+        "p75": 0.26,
+        "max": 0.618
+      },
+      "circularity": {
+        "min": 0.115,
+        "p25": 0.263,
+        "median": 0.315,
+        "p75": 0.424,
+        "max": 0.585
+      },
+      "mean_saturation": {
+        "min": 58.481,
+        "p25": 72.743,
+        "median": 81.339,
+        "p75": 91.434,
+        "max": 134.198
+      },
+      "mean_value": {
+        "min": 80.293,
+        "p25": 109.31,
+        "median": 113.08,
+        "p75": 116.754,
+        "max": 147.911
+      },
+      "pitch": {
+        "min": 10.198,
+        "p25": 22.432,
+        "median": 23.302,
+        "p75": 25.102,
+        "max": 33.3
+      },
+      "housing_contrast": {
+        "min": 5.527,
+        "p25": 25.141,
+        "median": 39.218,
+        "p75": 53.228,
+        "max": 66.046
+      },
+      "structure_score": {
+        "min": 0.74,
+        "p25": 0.95,
+        "median": 0.96,
+        "p75": 0.977,
+        "max": 1.0
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -11.893,
+        "p25": -8.188,
+        "median": -3.474,
+        "p75": 1.721,
+        "max": 17.115
+      },
+      "inactive_slot_contrast_min": {
+        "min": -29.9,
+        "p25": -15.802,
+        "median": -11.749,
+        "p75": -7.243,
+        "max": 2.023
+      }
+    },
+    "no_signal:YELLOW": {
+      "area": {
+        "min": 33.0,
+        "p25": 181.5,
+        "median": 287.0,
+        "p75": 356.875,
+        "max": 591.5
+      },
+      "center_x_ratio": {
+        "min": 0.217,
+        "p25": 0.686,
+        "median": 0.696,
+        "p75": 0.724,
+        "max": 0.877
+      },
+      "center_y_ratio": {
+        "min": 0.039,
+        "p25": 0.255,
+        "median": 0.319,
+        "p75": 0.345,
+        "max": 0.616
+      },
+      "circularity": {
+        "min": 0.15,
+        "p25": 0.249,
+        "median": 0.314,
+        "p75": 0.441,
+        "max": 0.884
+      },
+      "mean_saturation": {
+        "min": 42.364,
+        "p25": 46.531,
+        "median": 47.455,
+        "p75": 49.159,
+        "max": 99.561
+      },
+      "mean_value": {
+        "min": 90.201,
+        "p25": 99.94,
+        "median": 101.927,
+        "p75": 103.669,
+        "max": 152.083
+      },
+      "pitch": {
+        "min": 10.047,
+        "p25": 23.562,
+        "median": 29.63,
+        "p75": 33.04,
+        "max": 42.537
+      },
+      "housing_contrast": {
+        "min": 5.166,
+        "p25": 8.323,
+        "median": 12.914,
+        "p75": 22.669,
+        "max": 40.196
+      },
+      "structure_score": {
+        "min": 0.8,
+        "p25": 0.855,
+        "median": 0.884,
+        "p75": 0.955,
+        "max": 0.999
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -28.789,
+        "p25": -3.059,
+        "median": 2.183,
+        "p75": 10.411,
+        "max": 34.294
+      },
+      "inactive_slot_contrast_min": {
+        "min": -61.59,
+        "p25": -30.217,
+        "median": -12.874,
+        "p75": -0.952,
+        "max": 20.447
+      }
+    },
+    "signal:RED": {
+      "area": {
+        "min": 175.5,
+        "p25": 262.875,
+        "median": 367.5,
+        "p75": 454.625,
+        "max": 489.5
+      },
+      "center_x_ratio": {
+        "min": 0.044,
+        "p25": 0.047,
+        "median": 0.063,
+        "p75": 0.091,
+        "max": 0.129
+      },
+      "center_y_ratio": {
+        "min": 0.122,
+        "p25": 0.279,
+        "median": 0.332,
+        "p75": 0.376,
+        "max": 0.504
+      },
+      "circularity": {
+        "min": 0.401,
+        "p25": 0.419,
+        "median": 0.475,
+        "p75": 0.561,
+        "max": 0.674
+      },
+      "mean_saturation": {
+        "min": 53.493,
+        "p25": 87.169,
+        "median": 100.093,
+        "p75": 102.573,
+        "max": 104.919
+      },
+      "mean_value": {
+        "min": 80.483,
+        "p25": 101.148,
+        "median": 111.923,
+        "p75": 117.789,
+        "max": 123.73
+      },
+      "pitch": {
+        "min": 23.17,
+        "p25": 28.208,
+        "median": 33.349,
+        "p75": 37.283,
+        "max": 38.696
+      },
+      "housing_contrast": {
+        "min": 19.143,
+        "p25": 19.843,
+        "median": 21.253,
+        "p75": 23.477,
+        "max": 26.62
+      },
+      "structure_score": {
+        "min": 0.823,
+        "p25": 0.875,
+        "median": 0.912,
+        "p75": 0.941,
+        "max": 0.972
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -11.921,
+        "p25": -4.377,
+        "median": 1.212,
+        "p75": 4.512,
+        "max": 5.189
+      },
+      "inactive_slot_contrast_min": {
+        "min": -21.916,
+        "p25": -20.506,
+        "median": -19.416,
+        "p75": -18.268,
+        "max": -16.681
+      }
+    },
+    "signal:YELLOW": {
+      "area": {
+        "min": 363.5,
+        "p25": 365.375,
+        "median": 392.5,
+        "p75": 469.25,
+        "max": 620.0
+      },
+      "center_x_ratio": {
+        "min": 0.626,
+        "p25": 0.675,
+        "median": 0.693,
+        "p75": 0.696,
+        "max": 0.703
+      },
+      "center_y_ratio": {
+        "min": 0.086,
+        "p25": 0.152,
+        "median": 0.176,
+        "p75": 0.182,
+        "max": 0.193
+      },
+      "circularity": {
+        "min": 0.166,
+        "p25": 0.186,
+        "median": 0.196,
+        "p75": 0.231,
+        "max": 0.327
+      },
+      "mean_saturation": {
+        "min": 47.116,
+        "p25": 47.271,
+        "median": 47.575,
+        "p75": 48.061,
+        "max": 48.762
+      },
+      "mean_value": {
+        "min": 90.273,
+        "p25": 96.381,
+        "median": 98.874,
+        "p75": 102.258,
+        "max": 111.037
+      },
+      "pitch": {
+        "min": 33.346,
+        "p25": 33.431,
+        "median": 34.63,
+        "p75": 37.738,
+        "max": 43.549
+      },
+      "housing_contrast": {
+        "min": 5.184,
+        "p25": 7.845,
+        "median": 9.243,
+        "p75": 12.989,
+        "max": 22.696
+      },
+      "structure_score": {
+        "min": 0.845,
+        "p25": 0.865,
+        "median": 0.875,
+        "p75": 0.897,
+        "max": 0.952
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -2.346,
+        "p25": 3.355,
+        "median": 6.311,
+        "p75": 11.228,
+        "max": 22.811
+      },
+      "inactive_slot_contrast_min": {
+        "min": -9.954,
+        "p25": -3.559,
+        "median": -0.846,
+        "p75": 2.14,
+        "max": 9.357
+      }
+    },
+    "signal:GREEN": {
+      "area": {
+        "min": 163.5,
+        "p25": 354.5,
+        "median": 555.0,
+        "p75": 724.5,
+        "max": 1571.5
+      },
+      "center_x_ratio": {
+        "min": 0.352,
+        "p25": 0.594,
+        "median": 0.677,
+        "p75": 0.82,
+        "max": 0.964
+      },
+      "center_y_ratio": {
+        "min": 0.186,
+        "p25": 0.421,
+        "median": 0.509,
+        "p75": 0.539,
+        "max": 0.616
+      },
+      "circularity": {
+        "min": 0.08,
+        "p25": 0.103,
+        "median": 0.118,
+        "p75": 0.165,
+        "max": 0.422
+      },
+      "mean_saturation": {
+        "min": 50.004,
+        "p25": 54.206,
+        "median": 56.312,
+        "p75": 58.785,
+        "max": 72.574
+      },
+      "mean_value": {
+        "min": 132.376,
+        "p25": 152.159,
+        "median": 156.194,
+        "p75": 159.481,
+        "max": 191.321
+      },
+      "pitch": {
+        "min": 22.364,
+        "p25": 27.764,
+        "median": 34.0,
+        "p75": 44.16,
+        "max": 69.334
+      },
+      "housing_contrast": {
+        "min": 5.262,
+        "p25": 8.018,
+        "median": 10.488,
+        "p75": 16.013,
+        "max": 24.286
+      },
+      "structure_score": {
+        "min": 0.742,
+        "p25": 0.792,
+        "median": 0.854,
+        "p75": 0.894,
+        "max": 0.952
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -15.877,
+        "p25": -6.705,
+        "median": 1.207,
+        "p75": 9.245,
+        "max": 27.968
+      },
+      "inactive_slot_contrast_min": {
+        "min": -39.691,
+        "p25": -23.517,
+        "median": -12.294,
+        "p75": -8.129,
+        "max": 13.581
+      }
+    },
+    "signal:LEFT": {
+      "area": {
+        "min": 194.5,
+        "p25": 488.0,
+        "median": 663.5,
+        "p75": 1017.5,
+        "max": 1529.5
+      },
+      "center_x_ratio": {
+        "min": 0.54,
+        "p25": 0.638,
+        "median": 0.682,
+        "p75": 0.844,
+        "max": 0.965
+      },
+      "center_y_ratio": {
+        "min": 0.136,
+        "p25": 0.329,
+        "median": 0.365,
+        "p75": 0.431,
+        "max": 0.522
+      },
+      "circularity": {
+        "min": 0.08,
+        "p25": 0.087,
+        "median": 0.098,
+        "p75": 0.129,
+        "max": 0.52
+      },
+      "mean_saturation": {
+        "min": 54.247,
+        "p25": 59.243,
+        "median": 61.433,
+        "p75": 65.236,
+        "max": 82.822
+      },
+      "mean_value": {
+        "min": 129.356,
+        "p25": 147.98,
+        "median": 153.091,
+        "p75": 154.642,
+        "max": 173.301
+      },
+      "pitch": {
+        "min": 23.0,
+        "p25": 37.0,
+        "median": 43.777,
+        "p75": 48.36,
+        "max": 64.25
+      },
+      "housing_contrast": {
+        "min": 5.067,
+        "p25": 8.283,
+        "median": 12.644,
+        "p75": 16.565,
+        "max": 28.879
+      },
+      "structure_score": {
+        "min": 0.591,
+        "p25": 0.827,
+        "median": 0.85,
+        "p75": 0.886,
+        "max": 0.97
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -19.292,
+        "p25": -6.684,
+        "median": -2.533,
+        "p75": 9.872,
+        "max": 21.872
+      },
+      "inactive_slot_contrast_min": {
+        "min": -37.462,
+        "p25": -23.972,
+        "median": -18.614,
+        "p75": -9.303,
+        "max": 7.19
+      }
+    },
+    "no_signal:LEFT": {
+      "area": {
+        "min": 206.5,
+        "p25": 498.5,
+        "median": 790.5,
+        "p75": 825.0,
+        "max": 859.5
+      },
+      "center_x_ratio": {
+        "min": 0.323,
+        "p25": 0.326,
+        "median": 0.329,
+        "p75": 0.613,
+        "max": 0.897
+      },
+      "center_y_ratio": {
+        "min": 0.611,
+        "p25": 0.613,
+        "median": 0.615,
+        "p75": 0.615,
+        "max": 0.616
+      },
+      "circularity": {
+        "min": 0.111,
+        "p25": 0.19,
+        "median": 0.27,
+        "p75": 0.283,
+        "max": 0.296
+      },
+      "mean_saturation": {
+        "min": 54.159,
+        "p25": 54.923,
+        "median": 55.688,
+        "p75": 56.304,
+        "max": 56.921
+      },
+      "mean_value": {
+        "min": 157.509,
+        "p25": 165.826,
+        "median": 174.142,
+        "p75": 174.769,
+        "max": 175.396
+      },
+      "pitch": {
+        "min": 25.133,
+        "p25": 28.067,
+        "median": 31.0,
+        "p75": 32.0,
+        "max": 33.0
+      },
+      "housing_contrast": {
+        "min": 6.6,
+        "p25": 7.885,
+        "median": 9.169,
+        "p75": 10.457,
+        "max": 11.745
+      },
+      "structure_score": {
+        "min": 0.853,
+        "p25": 0.858,
+        "median": 0.863,
+        "p75": 0.865,
+        "max": 0.868
+      },
+      "inactive_slot_contrast_mean": {
+        "min": 7.153,
+        "p25": 13.295,
+        "median": 19.437,
+        "p75": 20.982,
+        "max": 22.527
+      },
+      "inactive_slot_contrast_min": {
+        "min": -2.572,
+        "p25": -2.111,
+        "median": -1.65,
+        "p75": 3.899,
+        "max": 9.448
+      }
+    },
+    "no_signal:GREEN": {
+      "area": {
+        "min": 262.5,
+        "p25": 276.875,
+        "median": 291.25,
+        "p75": 305.625,
+        "max": 320.0
+      },
+      "center_x_ratio": {
+        "min": 0.86,
+        "p25": 0.865,
+        "median": 0.869,
+        "p75": 0.874,
+        "max": 0.879
+      },
+      "center_y_ratio": {
+        "min": 0.599,
+        "p25": 0.602,
+        "median": 0.604,
+        "p75": 0.606,
+        "max": 0.609
+      },
+      "circularity": {
+        "min": 0.102,
+        "p25": 0.109,
+        "median": 0.116,
+        "p75": 0.124,
+        "max": 0.131
+      },
+      "mean_saturation": {
+        "min": 52.857,
+        "p25": 53.944,
+        "median": 55.031,
+        "p75": 56.118,
+        "max": 57.205
+      },
+      "mean_value": {
+        "min": 153.369,
+        "p25": 153.852,
+        "median": 154.335,
+        "p75": 154.817,
+        "max": 155.3
+      },
+      "pitch": {
+        "min": 28.337,
+        "p25": 29.074,
+        "median": 29.812,
+        "p75": 30.549,
+        "max": 31.287
+      },
+      "housing_contrast": {
+        "min": 5.691,
+        "p25": 6.392,
+        "median": 7.093,
+        "p75": 7.793,
+        "max": 8.494
+      },
+      "structure_score": {
+        "min": 0.818,
+        "p25": 0.831,
+        "median": 0.844,
+        "p75": 0.857,
+        "max": 0.87
+      },
+      "inactive_slot_contrast_mean": {
+        "min": -4.226,
+        "p25": -3.602,
+        "median": -2.978,
+        "p75": -2.353,
+        "max": -1.729
+      },
+      "inactive_slot_contrast_min": {
+        "min": -15.219,
+        "p25": -12.557,
+        "median": -9.896,
+        "p75": -7.234,
+        "max": -4.573
+      }
+    }
+  },
+  "error_examples": {
+    "directory": "/home/user/dev/ros2/xycar_src/traffic_light_detector/analysis/error_examples",
+    "requested_per_type": 20,
+    "available": {
+      "false_positive": 88,
+      "raw_false_positive": 90,
+      "false_negative": 324,
+      "wrong_state": 26
+    },
+    "saved": {
+      "false_positive": 20,
+      "false_negative": 20,
+      "wrong_state": 20
+    }
+  }
+}

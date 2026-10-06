@@ -1,0 +1,185 @@
+traffic_light_detector:
+  ros__parameters:
+    image_topic: /usb_cam/image_raw/front
+    input_compressed: false
+    use_sim_time: false
+    qos.reliability: best_effort
+    qos.depth: 5
+
+    search_roi.x: 0.15
+    search_roi.y: 0.20
+    search_roi.w: 0.70
+    search_roi.h: 0.35
+    slot_boundaries: [0.00, 0.25, 0.50, 0.75, 1.00]
+    slot_margin: 0.10
+
+    hsv.red1.h_min: 0
+    hsv.red1.h_max: 12
+    hsv.red1.s_min: 55
+    hsv.red1.s_max: 255
+    hsv.red1.v_min: 75
+    hsv.red1.v_max: 255
+    hsv.red2.h_min: 168
+    hsv.red2.h_max: 179
+    hsv.red2.s_min: 55
+    hsv.red2.s_max: 255
+    hsv.red2.v_min: 75
+    hsv.red2.v_max: 255
+    hsv.yellow.h_min: 12
+    hsv.yellow.h_max: 38
+    hsv.yellow.s_min: 45
+    hsv.yellow.s_max: 255
+    hsv.yellow.v_min: 90
+    hsv.yellow.v_max: 255
+    hsv.green.h_min: 38
+    hsv.green.h_max: 102
+    hsv.green.s_min: 35
+    hsv.green.s_max: 255
+    hsv.green.v_min: 70
+    hsv.green.v_max: 255
+
+    auxiliary.red_normalized_min: 0.39
+    auxiliary.red_dominance_min: 18.0
+    auxiliary.lab_a_min: 136.0
+    auxiliary.yellow_rg_normalized_min: 0.69
+    auxiliary.yellow_blue_normalized_max: 0.25
+    auxiliary.yellow_dominance_min: 18.0
+    auxiliary.lab_b_min: 142.0
+    auxiliary.green_normalized_min: 0.36
+    auxiliary.green_dominance_min: 8.0
+    auxiliary.lab_a_max: 128.0
+
+    white.v_min: 238
+    white.s_max: 48
+    white.channel_saturated_min: 250
+    halo.dilation_size: 9
+    halo.min_color_ratio: 0.045
+
+    morphology.open_kernel: 3
+    morphology.close_kernel: 5
+    morphology.iterations: 1
+    contour.min_area: 5.0
+    contour.max_area: 4500.0
+    contour.min_circularity: 0.24
+    contour.min_aspect: 0.42
+    contour.max_aspect: 2.40
+
+    bbox.min_width: 90
+    bbox.min_height: 24
+    bbox.max_width_ratio: 0.95
+    bbox.aspect_min: 2.7
+    bbox.aspect_max: 5.8
+    bbox.pitch_scales: [0.75, 1.00, 1.30, 1.60, 2.00]
+    housing.dark_v_max: 105
+    housing.low_s_max: 70
+    housing.min_dark_ratio: 0.035
+    housing.min_low_s_ratio: 0.42
+    housing.min_mid_gray_ratio: 0.38
+    housing.min_confidence: 0.88
+    housing.min_structure_score: 0.24
+    housing.min_circle_slots: 3
+    housing.min_circle_match: 0.20
+
+    candidate.min_confidence: 0.38
+    candidate.white_light_threshold: 0.68
+    candidate.acquire_max_center_y_ratio: 0.38
+    candidate.acquire_min_center_x_ratio: 0.25
+    candidate.acquire_max_center_x_ratio: 0.66
+    candidate.max_count: 8
+    candidate.temporal_weight: 0.20
+    candidate.structure_weight: 0.34
+    candidate.housing_weight: 0.18
+    candidate.halo_weight: 0.16
+    candidate.shape_weight: 0.12
+    candidate.classification_weight: 0.28
+    candidate.classification_margin_weight: 0.02
+    candidate.nms_iou_threshold: 0.90
+
+    score.pixel_ratio_weight: 0.20
+    score.halo_color_weight: 0.25
+    score.brightness_weight: 0.10
+    score.contour_area_weight: 0.15
+    score.circularity_weight: 0.10
+    score.slot_position_weight: 0.10
+    score.housing_structure_weight: 0.10
+    score.target_pixel_ratio: 0.10
+    score.min_score: 0.43
+    score.margin: 0.055
+    score.white_penalty_weight: 0.38
+    score.left_priority_margin: 0.10
+    score.left_simultaneous_green_min: 0.55
+    # LEFT is emitted only when slot 2 and slot 3 each contain an independent,
+    # bright green blob. A distant LEFT arrow is naturally smaller and less
+    # compact than the straight lamp, so use asymmetric thresholds.
+    score.left_pair.left_min_score: 0.20
+    score.left_pair.left_min_pixel_ratio: 0.012
+    score.left_pair.left_min_area_ratio: 0.025
+    score.left_pair.left_min_brightness: 0.55
+    score.left_pair.green_min_pixel_ratio: 0.12
+    score.left_pair.green_min_area_ratio: 0.25
+    score.left_pair.green_min_brightness: 0.65
+    score.left_pair.left_min_strict_hsv_ratio: 0.25
+    score.left_pair.left_min_mean_saturation: 0.13
+    score.left_pair.left_min_halo_ratio: 0.0
+    score.left_pair.left_min_position: 0.25
+    score.left_pair.left_max_blob_aspect: 4.50
+    score.left_pair.left_min_blob_extent: 0.10
+    score.left_pair.green_min_strict_hsv_ratio: 0.38
+    score.left_pair.green_min_mean_saturation: 0.10
+    score.left_pair.green_min_halo_ratio: 0.025
+    score.left_pair.green_min_position: 0.35
+    score.left_pair.green_max_blob_aspect: 2.60
+    score.left_pair.green_min_blob_extent: 0.22
+    score.left_pair.min_area_similarity: 0.12
+    score.left_pair.max_vertical_offset_ratio: 0.34
+    score.left_pair.min_pitch_ratio: 0.52
+    score.left_pair.max_pitch_ratio: 1.48
+    score.left_pair.require_fresh_detection: true
+    # Require one strong LEFT observation before weaker pair frames may
+    # confirm/hold LEFT; this rejects GREEN-only inactive-lens reflections.
+    score.left_pair.strong_left_brightness: 0.84
+    score.left_pair.strong_evidence_timeout_sec: 0.60
+
+    tracking.enabled: true
+    tracking.tracker_type: CSRT
+    # Re-anchor the four-slot bbox frequently.  A longer CSRT-only interval can
+    # drift one slot left and turn a GREEN lamp into a false LEFT decision.
+    tracking.redetect_interval: 2
+    tracking.max_lost_frames: 5
+    tracking.search_expand_ratio: 1.8
+    tracking.bbox_smoothing_alpha: 0.40
+    tracking.max_center_jump_ratio: 0.40
+    tracking.max_size_jump_ratio: 0.60
+    tracking.enforce_position_gate: true
+    tracking.min_roi_overlap_ratio: 0.75
+    tracking.reacquire_cooldown_sec: 4.0
+
+    temporal_filter.confirm_frames: 3
+    # LEFT is more safety-critical than the other states.
+    temporal_filter.left_confirm_frames: 3
+    temporal_filter.history_size: 5
+    temporal_filter.unknown_hold_frames: 3
+    temporal_filter.state_hold_timeout_sec: 0.50
+
+    debug.publish_images: false
+    debug.jpeg_quality: 85
+    debug.show_rejected_candidates: false
+    debug.max_rejected_candidates: 4
+    debug.proposal_min_frames: 3
+    gui.enabled: false
+    gui.config_save_path: /home/user/dev/ros2/xycar_src/traffic_light_detector/config/traffic_light_tuned.yaml
+    gui.show_original: true
+    gui.show_masks: true
+    gui.show_overlay: true
+    gui.max_processing_fps: 10.0
+
+hsv_tuner:
+  ros__parameters:
+    image_topic: /usb_cam/image_raw/front
+    input_compressed: false
+    use_sim_time: false
+    qos.reliability: best_effort
+    qos.depth: 5
+    gui.enabled: true
+    gui.max_processing_fps: 10.0
+    gui.config_save_path: /home/user/dev/ros2/xycar_src/traffic_light_detector/config/traffic_light_tuned.yaml

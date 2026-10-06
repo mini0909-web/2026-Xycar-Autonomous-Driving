@@ -1,0 +1,92 @@
+{
+  "bag": "/home/user/dev/ros2/xycar_src/bag_extract/20260806_130814",
+  "topic": "/usb_cam/image_raw/front",
+  "frames": 8949,
+  "camera_fps": 30.167,
+  "detector_mean_fps": 909.366,
+  "processing_ms": {
+    "roi_mean": 0.0058,
+    "housing_mean": 0.9774,
+    "hsv_mean": 0.1107,
+    "total_mean": 1.0997,
+    "total_max": 2.8675,
+    "total_p99": 1.5196
+  },
+  "confirmation_ms": {
+    "count": 79,
+    "mean": 40.448,
+    "median": 32.994,
+    "p95": 102.186,
+    "max": 165.733
+  },
+  "raw_state_counts": {
+    "UNKNOWN": 8208,
+    "GREEN": 305,
+    "LEFT": 341,
+    "RED": 79,
+    "YELLOW": 16
+  },
+  "filtered_state_counts": {
+    "UNKNOWN": 8309,
+    "GREEN": 245,
+    "RED": 46,
+    "YELLOW": 25,
+    "LEFT": 324
+  },
+  "known_segments": {
+    "RED": {
+      "expected": "RED",
+      "frames": 61,
+      "state_counts": {
+        "UNKNOWN": 61
+      },
+      "expected_ratio": 0.0,
+      "expected_score_max": 0.0455,
+      "expected_score_mean": 0.0017
+    },
+    "YELLOW": {
+      "expected": "YELLOW",
+      "frames": 21,
+      "state_counts": {
+        "UNKNOWN": 21
+      },
+      "expected_ratio": 0.0,
+      "expected_score_max": 0.0,
+      "expected_score_mean": 0.0
+    },
+    "LEFT": {
+      "expected": "LEFT",
+      "frames": 161,
+      "state_counts": {
+        "UNKNOWN": 111,
+        "LEFT": 22,
+        "GREEN": 16,
+        "RED": 12
+      },
+      "expected_ratio": 0.1366,
+      "expected_score_max": 0.7022,
+      "expected_score_mean": 0.0863
+    },
+    "GREEN": {
+      "expected": "GREEN",
+      "frames": 51,
+      "state_counts": {
+        "UNKNOWN": 43,
+        "GREEN": 8
+      },
+      "expected_ratio": 0.1569,
+      "expected_score_max": 0.8556,
+      "expected_score_mean": 0.1277
+    },
+    "NO_SIGNAL": {
+      "expected": "UNKNOWN",
+      "frames": 152,
+      "state_counts": {
+        "UNKNOWN": 152
+      },
+      "expected_ratio": 1.0,
+      "expected_score_max": 0.1124,
+      "expected_score_mean": 0.0039
+    }
+  }
+}
