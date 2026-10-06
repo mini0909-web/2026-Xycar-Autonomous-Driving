@@ -42,3 +42,5 @@ logs/
 *.bag
 *.db3
 *.mcap
+backups/
+.vscode/
