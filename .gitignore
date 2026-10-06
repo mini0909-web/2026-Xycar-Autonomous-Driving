@@ -1,0 +1,44 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+id_rsa
+id_ed25519
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Generated logs
+*.log
+*.cmd_log
+
+# ROS build outputs
+build/
+install/
+log/
+logs/
+
+# Local backups and recordings
+/backups/
+/bag/
+/bags/
+/bag_extract/
+/dataset/
+/dataset_real/
+*.bag
+*.db3
+*.mcap
