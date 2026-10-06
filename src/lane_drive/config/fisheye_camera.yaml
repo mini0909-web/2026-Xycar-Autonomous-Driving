@@ -1,0 +1,54 @@
+image_width: 640
+image_height: 480
+camera_name: xycar_fisheye
+camera_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 342.6463004506741
+  - 0.0
+  - 324.98089092050793
+  - 0.0
+  - 320.4550172091302
+  - 227.67450432123306
+  - 0.0
+  - 0.0
+  - 1.0
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data:
+  - -0.024937579202668324
+  - 0.018281897665557798
+  - -0.020269969054403925
+  - 0.006463137911342223
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+projection_matrix:
+  rows: 3
+  cols: 4
+  data:
+  - 342.6463004506741
+  - 0.0
+  - 324.98089092050793
+  - 0.0
+  - 0.0
+  - 320.4550172091302
+  - 227.67450432123306
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0

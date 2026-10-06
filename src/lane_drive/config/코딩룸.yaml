@@ -1,0 +1,56 @@
+lane_drive:
+  ros__parameters:
+    image_topic: /image_raw
+    motor_topic: /xycar_motor
+    rectified_topic: /lane/rectified_image
+
+    # Apply config/fisheye_camera.yaml before ROI and lane detection.
+    enable_fisheye_rectification: true
+    calibration_file: ""
+    rectification_balance: 0.3
+
+    # Start lane driving as soon as valid lanes are detected.
+    auto_start: true
+    max_speed: 15.0 #최고속도(지피티피셜): 100.0
+    min_speed: 5.0
+    max_steering: 50.0
+    kp: 0.4
+    kd: 0.12
+    error_filter_alpha: 0.5
+    steering_sign: 1.0
+    single_lane_speed_factor: 1.5
+
+    camera_timeout_sec: 0.5
+    lost_lane_hold_sec: 0.25
+    lost_lane_timeout_sec: 0.7
+
+    # Camera and road geometry. Tune these while watching /lane/debug_image.
+    roi_top_ratio: 0.65 #맨위 두점 높이 조절, 증가하면 아래로
+    # The bottom edge stays at the image bottom; this moves only the diagonal anchors.
+    roi_bottom_ratio: 0.9 #사선 시작점 높이 조절, 증가하면 아래로
+    roi_top_half_width_ratio: 0.25 #위쪽 두점 거리 , 증가하면  벌어짐
+    roi_bottom_margin_ratio: 0.0 #아래쪽 두 점 거리, 증가하면 모임
+    detection_bottom_ratio: 0.90 #이 높이 아래의 차체/센서는 검출에서 제외 "이게 가장 최근에 추가한"
+    camera_center_offset_px: 0
+    lookahead_y_ratio: 0.67
+    histogram_start_ratio: 0.72
+    histogram_min_peak: 8
+
+    # HSV lane-color thresholds.
+    white_min_saturation: 70
+    white_min_value: 175
+    yellow_hue_min: 15
+    yellow_hue_max: 40
+    yellow_min_saturation: 70
+    yellow_min_value: 80
+
+    blur_size: 5
+    morphology_size: 5
+    window_count: 9
+    window_margin_px: 55
+    window_min_pixels: 30
+    minimum_lane_pixels: 160
+    default_lane_width_ratio: 0.45
+    minimum_lane_width_ratio: 0.22
+    maximum_lane_width_ratio: 0.80
+    lane_width_filter_alpha: 0.2
